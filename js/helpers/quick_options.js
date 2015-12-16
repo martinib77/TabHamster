@@ -1,23 +1,39 @@
 /**
  * This is a part of Chrome Extensions Box
  * Read more on GitHub - https://github.com/onikienko/chrome-extensions-box
- *
- * Parse html and replace all {{property name from message.json}} from text nodes, title, alt, value and placeholder attrs
- * with chrome.i18n.getMessage http://developer.chrome.com/extensions/i18n.html
  */
-window.addEventListener('load', function () {
 
-    function showMessage(msg) {
+/*
+Modified Chrome Extensions Box
+Make showMessage global
+ */
+var quick_options = {
+    showMessage: function (msg) {
         var el = document.getElementById(msg === 'error' ? 'error' : 'success');
         el.style.display = 'inline';
         setTimeout(function () {
             el.style.display = 'none';
         }, 2501);
     }
+};
+/*
+end of modifications
+ */
+
+window.addEventListener('load', function () {
+    /*This event will dispatch as soon as options page will be ready*/
+    var event = new CustomEvent('optionsPageReady');
 
     function saveToStorage(val) {
         storage.area.set(val, function () {
-            showMessage(chrome.runtime.lastError ? showMessage('error') : showMessage('success'));
+            quick_options.showMessage(chrome.runtime.lastError ? quick_options.showMessage('error') : quick_options.showMessage('success'));
+            // dispatch custom event
+            document.dispatchEvent(new CustomEvent('optionSaved', {
+                detail: {
+                    success: chrome.runtime.lastError ? false : true,
+                    val: val
+                }
+            }));
         });
     }
 
@@ -33,7 +49,7 @@ window.addEventListener('load', function () {
                 switch (el.type) {
                 case 'checkbox':
                     if (parseInt(items[storage_name], 10) === 1) {
-                        el.checked = 'checked';
+                        el.checked = true;
                     }
                     el.addEventListener('change', function () {
                         var val = {};
@@ -76,6 +92,7 @@ window.addEventListener('load', function () {
                 case 'password':
                 case 'email':
                 case 'tel':
+                case 'number':
                     el.value = items[storage_name];
                     break;
 
@@ -146,6 +163,9 @@ window.addEventListener('load', function () {
                 }
             }
         });
+
+        /* Options page is ready. Dispatch event */
+        document.dispatchEvent(event);
 
     });
 }, false);

@@ -1,3 +1,37 @@
+0.2.10 (08.12.2015 12:32)
+	Add Serbian translation (thanks to Sijera)
+	Fix Opera manifest to persistent background page
+	Open tabs from background page (not from popup)
+0.2.9 (23.09.2015 13:49)
+	Manual Backup/Restore for saved groups and options (see Options Page).
+0.2.8.1 (16.04.2015 09:29)
+	Fix error with Group Saving when option 'Current window only' unchecked
+0.2.8 (15.04.2015 10:04)
+	Save with the same name dialogue
+	Fix styles
+0.2.7 (10.04.2015 10:54)
+	Ability to turn off Session Watcher (see Options page)
+	Fix locales
+0.2.6 (26.11.2014 12:59)
+	Add French translation (thanks to Aurélien Léger aka Dexyne)
+	Changed monospaced font in popup to Tahoma, san-serif
+0.2.5 (12.11.2014 17:37)
+	Fix problem with group and session expanding (thanks to Ricardo J. Barberis aka richarson)
+	Fix Open In New Window bug
+0.2.4 (02.06.2014 18:39)
+	Hungarian translation (thanks to Zoltan Mihics aka Med1on)
+0.2.3 (12.02.2014 08:54)
+	Add Ukrainian translation
+	Pinned tabs are shown as Pinned in Saved Groups
+	Pinned tabs open as Pinned
+0.2.2 (31.01.2014 16:51)
+	Fix error messages
+	Minimize tab title to 49 chars
+0.2.1 (15.10.2013 19:31)
+	Fix error with edit link which starts with 'file://' or 'chrome-devtools://'
+0.2 (14.10.2013 16:02)
+	Spanish translation. Thanks to Martin Irigaray.
+	Fix error with edit file:// link
 0.1.3 (25.09.2013 18:43)
 0.1.2 (25.09.2013 18:40)
 	Fix error with pinned tabs

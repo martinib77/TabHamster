@@ -22,6 +22,7 @@
     <section id="main_tabs" class="tabs">
         <ul class="tabs_nav">
             <li><a href="#main">{{o_tabs_main}}</a></li>
+            <li><a href="#backup">{{o_tabs_backup}}</a></li>
             <li><a href="#help">{{o_tabs_help}}</a></li>
             <li><a href="#about">{{o_tabs_about}}</a></li>
         </ul>
@@ -38,6 +39,7 @@
                             <option value="us">{{ o_dateFormat_us }}</option>
                         </select>
                     </p>
+                    <p><label><input id="session_watcher" type="checkbox" data-storage="session_watcher"/>{{ o_sessionWatcher_toggle }}</label></p>
                 </fieldset>
 
                 <fieldset>
@@ -45,6 +47,22 @@
                     <p><label><input type="checkbox" data-storage="pinned"/>{{ o_savedTabs_pinned }}</label></p>
 
                     <p><label><input type="checkbox" data-storage="cur_win"/>{{ o_savedTabs_cur_win }}</label></p>
+                </fieldset>
+            </div>
+
+            <div id="backup">
+                <fieldset>
+                    <legend>{{ o_backup_restoreLegend }}</legend>
+                    <p>{{ o_backup_restoreInstruction }}</p>
+                    <p><strong>{{ o_backup_restoreInstructionMore }}</strong></p>
+                    <textarea id="restore_text" cols="60" rows="10"></textarea>
+                    <button id="restore_btn">{{ o_backup_restoreButton }}</button>
+                </fieldset>
+                <fieldset>
+                    <legend>{{ o_backup_backupLegend }}</legend>
+                    <p> {{ o_backup_backupInstruction }}</p>
+                    <p> {{ o_backup_backupInstructionMore }}</p>
+                    <textarea id="backup_text" cols="60" rows="10"></textarea>
                 </fieldset>
             </div>
 
@@ -70,9 +88,6 @@
 
             <div id="about">
                 <dl>
-                    <!--<dt>Dev:</dt>-->
-                    <!--<dd><a href="http://onikienko.pp.ua">onikienko.pp.ua</a></dd>-->
-
                     <dt>Source:</dt>
                     <dd><a href="https://github.com/onikienko/TabHamster">GitHub</a></dd>
                     <dt>Contacts:</dt>
@@ -80,16 +95,29 @@
                         <br>
                         <a href="http://onikienko.pp.ua">onikienko.pp.ua</a>
                     </dd>
-                    <hr>
-                    <p>'Pin' icon from <a href="http://icons8.com/">icon8.com</a></p>
                 </dl>
+                    <hr>
+                    Spanish translation by <a href="https://github.com/martinib77">Martin Irigaray</a>
+					<br>
+					Hungarian translation by <a href="https://github.com/Med1on">Zoltan Mihics</a>
+                    <br>
+                    French translation by <a href="https://github.com/Dexyne">Aurélien Léger</a>
+                    <br>
+                    Serbian translation by <strong>Sijera</strong>
+                    <hr/>
+                    Thanks to: <a href="https://github.com/richarson">Ricardo J. Barberis</a>
+                    <hr/>
+                    <p>'Pin' icon by <a href="http://icons8.com/">icon8.com</a></p>
             </div>
 
         </div>
     </section>
 
     <footer>
-        <p class="copyright">by <a href="http://onikienko.pp.ua" target="_blank">Michael Onikienko</a></p>
+        <p class="copyright">
+            &nbsp;by <a href="http://onikienko.pp.ua" target="_blank">Mykhailo Onikiienko</a>
+            &nbsp;&nbsp; <3 <span id="ua_flag">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </p>
     </footer>
 </div>
 
@@ -99,6 +127,7 @@
 <script src="js/storage.js"></script>
 <script src="js/helpers/quick_options.js"></script>
 <!--<script src="lib/jquery.min.js"></script>-->
+<script src="js/backup.js"></script>
 <script src="js/options.js"></script>
 
 </body>

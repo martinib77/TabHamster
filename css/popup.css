@@ -64,7 +64,6 @@ ul.tabs_nav {
 }
 
 .group {
-    font-family: "Lucida Console", monospace;
     font-size: 14px;
     padding: 8px 3px;
     border-bottom: 1px solid #E2F4FB;
@@ -81,18 +80,18 @@ ul.tabs_nav {
     float: right;
 }
 
-.spoiler, .group_action>span, .link_action>span, .open_in_new_window {
+.spoiler, .group_action > span, .link_action > span, .open_in_new_window {
     margin-left: 5px;
     cursor: pointer;
     color: lightgrey;
 }
 
-.spoiler:hover, .group_action>span:hover, .link_action>span:hover, .up:hover, .down:hover,  .open_in_new_window:hover {
+.spoiler:hover, .group_action > span:hover, .link_action > span:hover, .up:hover, .down:hover, .open_in_new_window:hover {
     color: #4a4a4a;
 }
 
 .link {
-    font-size: 12px;
+    font-size: 13px;
     margin-top: 8px;
 }
 
@@ -114,16 +113,17 @@ ul.tabs_nav {
 
 .win {
     padding: 8px;
-    margin:0 0 0 15px;
+    margin: 0 0 0 15px;
 }
+
 .win_title {
     font-size: 14px;
     color: #0099CC;
-    border-bottom:  1px solid #E2F4FB;
+    border-bottom: 1px solid #E2F4FB;
     cursor: pointer;
 }
 
-.favi>img {
+.favi > img {
     width: 16px;
     height: 16px;
     vertical-align: middle;
@@ -145,8 +145,8 @@ ul.tabs_nav {
     top: 0;
     width: 100%;
     height: 100%;
-    /*background: rgba(0,0,0,.7);*/
-    text-align: center
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .popup__overlay:after {
@@ -154,29 +154,28 @@ ul.tabs_nav {
     height: 100%;
     width: 0;
     vertical-align: middle;
-    content: ''
+    content: '';
 }
 
 .popup {
     display: inline-block;
     position: relative;
-    max-width: 90%;
+    max-width: 85%;
     padding: 15px;
-    border: 1px solid gray;
-    border-radius: 2px;
-    /*box-shadow: inset 0 2px 2px 2px rgba(0,0,0,.4);*/
-    background: #fff;
-    vertical-align: middle
+    border: 1px solid #606060;
+    border-radius: 4px;
+    background: #fdfdfd;
+    vertical-align: middle;
 }
 
 .popup-form__row {
-    margin: 1em 0
+    margin: 1em 0;
 }
 
 label {
     display: inline-block;
     width: 120px;
-    text-align: left
+    text-align: left;
 }
 
 input[type="text"] {
@@ -185,7 +184,7 @@ input[type="text"] {
     padding: 2px;
     border: 1px solid;
     border-color: #999 #ccc #ccc;
-    border-radius: 2px
+    border-radius: 2px;
 }
 
 input[type="button"] {
@@ -194,7 +193,7 @@ input[type="button"] {
     border-radius: 2px;
     cursor: pointer;
     background: #33B5E5;
-    color: #fff
+    color: #fff;
 }
 
 input[type="button"].cancel {
@@ -203,7 +202,7 @@ input[type="button"].cancel {
 
 .popup__close:hover {
     color: red;
-    background: #ddd
+    background: #ddd;
 }
 
 /* popup form */
